@@ -3,13 +3,24 @@
 
 ## Activity 1
 <p align="center"> 
+    <strong> Repo</strong> <br><br>
     <img src="screenshots/activity-one.png">
 </p>
 
 ## Activity 2
 <p align="center"> 
+    <strong> Repo</strong> <br><br>
+    <img src="screenshots/activity-two-repo.png"><br><br>
+    <strong> Home Page</strong> <br><br>
     <img src="screenshots/activity-two-page.png">
-    <img src="screenshots/activity-two-repo.png">
+</p>
+
+## Activity 3
+<p align="center"> 
+    <strong> Repo</strong> <br><br>
+    <img src="screenshots/activity-three-repo.png"><br><br>
+    <strong> Home Page</strong> <br><br>
+    <img src="screenshots/activity-three-page.png">
 </p>
 
 ## License 📄
