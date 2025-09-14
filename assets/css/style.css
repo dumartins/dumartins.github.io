@@ -120,7 +120,11 @@
   background-color: white;
 }
 
-.loadmore {
+#load-more{
+  text-align: center;
+}
+
+#load-more-button {
   position: relative;
   padding: 11px 35px;
   color: #ebebeb;
