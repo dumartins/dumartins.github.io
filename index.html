@@ -411,8 +411,6 @@
                 </p>
               </div>
               <div class="card-reveal">
-                <!-- TODO: change this -- only close button -->
-                <!-- <span class="card-title brown-text">Accomplishments<i class="mdi-navigation-close right"></i></span> -->
                 <span class="card-title grey-text"><small>Accomplishments</small><i
                     class="mdi-navigation-close right"></i></span>
                 <ul>
@@ -451,8 +449,6 @@
                 </p>
               </div>
               <div class="card-reveal">
-                <!-- TODO: change this -- only close button -->
-                <!-- <span class="card-title brown-text">Accomplishments<i class="mdi-navigation-close right"></i></span> -->
                 <span class="card-title grey-text"><small>Accomplishments</small><i
                     class="mdi-navigation-close right"></i></span>
                 <ul>
@@ -490,8 +486,6 @@
                 </p>
               </div>
               <div class="card-reveal">
-                <!-- TODO: change this -- only close button -->
-                <!-- <span class="card-title brown-text">Accomplishments<i class="mdi-navigation-close right"></i></span> -->
                 <span class="card-title teal-text"><small>Accomplishments</small><i
                     class="mdi-navigation-close right"></i></span>
                 <ul>
@@ -517,6 +511,12 @@
 
           <!-- ************* -->
         </div>
+
+        <div class="row" id="project-container"></div>
+        <div class='buttons'>
+              <button id ="load-more-button" class="loadmore">Load More</button>
+        </div>
+
       </div>
     </section>
 
@@ -708,6 +708,129 @@
       })
     })
   </script>
+
+  <!-- Dynamic Load of Most Recent Projects-->
+  <script>
+
+    const projectList = [
+      {
+        name: "Rescue Ranger",
+        alt: "rescue ranger",
+        description: "A search and rescue rover prototype",
+        imagePath: "/assets/img/project-rover-logo.webp",
+        accomplishments: [
+          "Computer vision aided victim detection.",
+          "Visual representation of victim's location via map marker.",
+          "Autonomous terrain / debris navigation."
+        ],
+        tools: "React, HTML, CSS, Bootstrap, Python, OpenCV",
+        onlineLink: "https://devpost.com/software/rescue-ranger",
+        sourceLink: "https://github.com/brettyang003/Rescue-Ranger"
+      },
+      {
+        name: "Rescue Ranger",
+        alt: "rescue ranger",
+        description: "A search and rescue rover prototype",
+        imagePath: "/assets/img/project-rover-logo.webp",
+        accomplishments: [
+          "Computer vision aided victim detection.",
+          "Visual representation of victim's location via map marker.",
+          "Autonomous terrain / debris navigation."
+        ],
+        tools: "React, HTML, CSS, Bootstrap, Python, OpenCV",
+        onlineLink: "https://devpost.com/software/rescue-ranger",
+        sourceLink: "https://github.com/brettyang003/Rescue-Ranger"
+      },
+      {
+        name: "Rescue Ranger",
+        alt: "rescue ranger",
+        description: "A search and rescue rover prototype",
+        imagePath: "/assets/img/project-rover-logo.webp",
+        accomplishments: [
+          "Computer vision aided victim detection.",
+          "Visual representation of victim's location via map marker.",
+          "Autonomous terrain / debris navigation."
+        ],
+        tools: "React, HTML, CSS, Bootstrap, Python, OpenCV",
+        onlineLink: "https://devpost.com/software/rescue-ranger",
+        sourceLink: "https://github.com/brettyang003/Rescue-Ranger"
+      },
+      {
+        name: "Rescue Ranger",
+        alt: "rescue ranger",
+        description: "A search and rescue rover prototype",
+        imagePath: "/assets/img/project-rover-logo.webp",
+        accomplishments: [
+          "Computer vision aided victim detection.",
+          "Visual representation of victim's location via map marker.",
+          "Autonomous terrain / debris navigation."
+        ],
+        tools: "React, HTML, CSS, Bootstrap, Python, OpenCV",
+        onlineLink: "https://devpost.com/software/rescue-ranger",
+        sourceLink: "https://github.com/brettyang003/Rescue-Ranger"
+      }
+    ];
+
+    let counter = 0;
+
+    function createProjectCard(project) {
+      const accomplishmentsList = project.accomplishments.map(item => `<li>${item}</li>`).join(''); // Convert array of accomplishments to list items
+    
+      return `
+        <div class="col s12 m6 l4">
+          <div class="card medium">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img alt="${project.alt}" src="${project.imagePath}" style="height: 100%; width: 100%" class="activator" />
+            </div>
+            <div class="card-content">
+              <span class="card-title activator teal-text hoverline">${project.name}<i
+                  class="mdi-navigation-more-vert right"></i></span>
+              <p>
+              ${project.description}} 
+              </p>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text"><small>Accomplishments</small><i
+                  class="mdi-navigation-close right"></i></span>
+              <ul>
+                <li><b>Tools:</b> ${project.tools}</li>
+                ${accomplishmentsList}
+              </ul>
+              <div class="card-action">
+                <a aria-label="Visit " href="${project.onlineLink}" target="_blank" data-position="top"
+                  data-tooltip="View Online"
+                  class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
+                    class="fa fa-external-link"></i></a>
+                <a aria-label="Visit the GitHub repo for  project" href="${project.sourceLink}"
+                  target="_blank" data-position="top" data-tooltip="View Source"
+                  class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
+                    class="fa fa-github"></i></a>
+              </div>
+            </div>
+          </div>
+        </div> 
+      `;
+    }
+
+    function loadNextProject() {
+      const container = document.getElementById("project-container");
+
+      if (counter < projectList.length) {
+        const projectCard = createProjectCard(projectList[counter]);
+        container.innerHTML += projectCard;
+        counter++;
+      } else {
+        document.getElementById("load-more-button").style.display = "none"; // Hide button when there are no more projects
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+      loadNextProject(); // Load the first project on page load
+      document.getElementById("load-more-button").addEventListener("click", loadNextProject); // load next project on button click
+    });
+
+  </script>
+
 </body>
 
 </html>
