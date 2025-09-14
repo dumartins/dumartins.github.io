@@ -31,6 +31,12 @@
     <img src="screenshots/activity-four-page.png">
 </p>
 
+## Activity 4
+<p align="center"> 
+    <strong> Recent Projects Page</strong> <br><br>
+    <img src="screenshots/activity-five-page.png">
+</p>
+
 ## License 📄
 This project is licensed under the MIT License - see the [LICENSE.md](./LICENSE) file for details.
 ### dumartins.github.io
